@@ -3,7 +3,15 @@ import { IBooksStore } from '../../core/interfaces';
 import { addBook } from './books.actions';
 
 const INITIAL_STATE: IBooksStore = {
-  books: [],
+  books: [
+    {
+      id: '1',
+      title: 'What the heck is EOS?',
+      description: 'A complete guide for Employees in Companies Running on EOS',
+      pageCount: 170,
+      publishDate: 2020,
+    },
+  ],
 };
 
 export const bookReducer = createReducer(
