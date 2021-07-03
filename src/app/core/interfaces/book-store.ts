@@ -1,8 +1,5 @@
+import { IBook } from './book';
 
 export interface IBooksStore {
-
-    idBook: string;
-    
-    books: string[];
-
+  books: IBook[];
 }
