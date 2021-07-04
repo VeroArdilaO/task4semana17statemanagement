@@ -1,9 +1,11 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { IAppState, IBook } from '../../core/interfaces';
+import { IAppState, IBooksStore } from '../../core/interfaces';
 
-const userState = createFeatureSelector<IAppState, IBook>('book');
+export const booksStateSelector = createFeatureSelector<IAppState, IBooksStore>(
+  'booksState'
+);
 
-export const getName = createSelector (
-  userState,
-  state => state.title
+export const booksSelector = createSelector(
+  booksStateSelector,
+  (bookState) => bookState.books
 );

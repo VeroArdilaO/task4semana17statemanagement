@@ -3,5 +3,5 @@ import { IAppState } from '../core/interfaces';
 import { bookReducer } from './books';
 
 export const rootReducer: ActionReducerMap<IAppState, Action> = {
-  book: bookReducer
+  booksState: bookReducer,
 };

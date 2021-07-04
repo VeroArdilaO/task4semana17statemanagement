@@ -3,20 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { rootReducer } from './store/root.reducer';
-import { BookListComponent } from './pages/book-list/book-list.component';
+import { BooksComponent } from './pages/books/books.component';
+import { BooksFacade } from './store';
+
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    BookListComponent
-  ],
+  declarations: [AppComponent, BooksComponent],
   imports: [
     BrowserModule,
-    StoreModule.forRoot(rootReducer)
+    StoreModule.forRoot(rootReducer),
+    }),
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+
+  providers: [BooksFacade],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
-
-
+export class AppModule {}
