@@ -5,6 +5,7 @@ import { StoreModule } from '@ngrx/store';
 import { rootReducer } from './store/root.reducer';
 import { BooksComponent } from './pages/books/books.component';
 import { BooksFacade } from './store';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -12,7 +13,7 @@ import { BooksFacade } from './store';
   imports: [
     BrowserModule,
     StoreModule.forRoot(rootReducer),
-    }),
+    AppRoutingModule,
   ],
 
   providers: [BooksFacade],
