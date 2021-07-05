@@ -16,4 +16,4 @@ y le agregaremos estilos, además de navegabilidad mediate el Router de Angular
 
 http://localhost:4200/books
 
-<img src="./src/assets/maquetacionbookproject.png" alt="pantallazo-bookManager>
+<img src="./src/assets/maquetacionbookproject.png" alt="pantallazo-bookManager">
