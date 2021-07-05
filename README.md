@@ -13,3 +13,7 @@ Ver la lista de sesiones progamadas
 
 En este reto, retomaremos el trabajo que realizaste en el ultimo reto de la misión sobre State Management,
 y le agregaremos estilos, además de navegabilidad mediate el Router de Angular
+
+http://localhost:4200/books
+
+<img src="./src/assets/maquetacionbookproject.png" alt="pantallazo-bookManager>
