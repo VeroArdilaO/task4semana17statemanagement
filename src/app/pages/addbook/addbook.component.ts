@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, isDevMode } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -7,6 +7,8 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['./addbook.component.css']
 })
 export class AddbookComponent implements OnInit {
+
+  isDevMode = isDevMode();
 
   form = new FormGroup({
     Id: new FormControl ("" , [Validators.required, Validators.maxLength(3)]),
@@ -25,7 +27,7 @@ export class AddbookComponent implements OnInit {
 
   send(){
 
-    console.log(this.form.value)
+    console.log(JSON.stringify(this.form.value))
 
     this.form = new FormGroup({
       Id: new FormControl ("" , [Validators.required, Validators.maxLength(4)]),
@@ -34,7 +36,31 @@ export class AddbookComponent implements OnInit {
       pagesNumber: new FormControl ("" , Validators.required),
       Year: new FormControl ("" , Validators.required),
     });
-   
   }
+
+
+  shouldMessage(formcontrolname:string, errorType: string) {
+    let errors;
+    const formControl = this.form.get(formcontrolname) as FormControl;
+    if(formControl.errors) {
+       errors = formControl.errors;
+       console.log(errors)
+       return formControl.errors[errorType]
+    }
+    return errors
+  }
+
+  /*  Cuando se pide tipar una función
+  
+  shouldMessage(formcontrolname:string, errorType: string):boolean {
+    let hasErrorType:boolean = false;
+    const formControl = this.form.get(formcontrolname) as FormControl;
+    if(formControl.errors) {
+       hasErrorType = formControl.errors[errorType]
+    }
+    return hasErrorType
+  }
+  */
+
 
 }

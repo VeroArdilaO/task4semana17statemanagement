@@ -38,11 +38,18 @@
                       placeholder="Id" 
                       class="text-xl border p-2  w-14" 
                       formControlName="Id">
-
-                    <!--   <p>
-                        <small class="validar"  *ngIf="control.hasError('required') && control.dirty"> Este campo es requerido </small>
-                      </p> -->
-
+                      <div *ngIf=" form.controls['Id'].invalid && (form.controls['Id'].dirty || form.controls['Id'].touched) "class="alert"> 
+                        
+                        <div  class=" text-red-700 text-xl"  *ngIf= "shouldMessage('Id', 'required')">
+                          Id is required.
+                        </div>
+                           <div  class=" text-red-700 text-xl"  *ngIf= "shouldMessage('Id', 'maxlength')">
+                          Id must be at least 3 numbers long
+                        </div>
+                      <!--   <div  class=" text-red-700 text-xl" *ngIf="form.get('Id')?.hasError('maxlength')">
+                          Id must be at least 3 numbers long
+                        </div> -->
+                      </div>
 
                       <input 
                       type="tel" 
@@ -51,6 +58,12 @@
                       placeholder="Title" 
                       class=" text-xl border p-2 w-11/12" 
                       formControlName="Title" >
+
+                      <div *ngIf=" form.controls['Title'].invalid && (form.controls['Title'].dirty || form.controls['Title'].touched) "class=" "> 
+                        <div  class=" text-red-700 text-xl"*ngIf="form.controls['Title'].errors">
+                          Title is required.
+                        </div>
+                      </div>
 
                     </div>
                     <textarea 
@@ -62,6 +75,12 @@
                     class=" text-xl border p-2 mt-3 w-full" 
                     formControlName="Description">
                     </textarea>
+
+                    <div *ngIf=" form.controls['Description'].invalid && (form.controls['Description'].dirty || form.controls['Description'].touched) "class=" "> 
+                      <div  class=" text-red-700 text-xl"*ngIf="form.controls['Description'].errors">
+                        Description is required.
+                      </div>
+                    </div>
                    <div class="flex space-x-5 mt-3">
                       <input 
                       type="text" 
@@ -71,6 +90,12 @@
                       class=" text-xl border p-2  w-1/2" 
                       formControlName="pagesNumber">
 
+                      <div *ngIf=" form.controls['pagesNumber'].invalid && (form.controls['pagesNumber'].dirty || form.controls['pagesNumber'].touched) "class=" "> 
+                        <div  class=" text-red-700 text-xl"*ngIf="form.controls['pagesNumber'].errors">
+                          This field is required.
+                        </div>
+                      </div>
+
                       <input 
                       class="form-control"
                       type="tel" 
@@ -79,10 +104,22 @@
                       placeholder="Year" 
                       class=" text-xl border p-2 w-1/2" 
                       formControlName="Year">
+
+                      <div *ngIf=" form.controls['Year'].invalid && (form.controls['Year'].dirty || form.controls['Year'].touched) "class=" "> 
+                        <div  class=" text-red-700 text-xl"*ngIf="form.controls['Year'].errors">
+                          This field is required.
+                        </div>
+                      </div>
                     </div>
                   <input [disabled]="form.invalid"  type="submit" value="Create"  class=" text-2xl w-full mt-6 bg-blue-600 hover:bg-blue-500 text-white font-semibold p-3">
               </form>
         </main>
+
+        <pre *ngIf="isDevMode"> {{form.value | json}} </pre>
+        <pre> {{form.errors | json}} </pre>
     </body>
 </html>
+
+
+
 
