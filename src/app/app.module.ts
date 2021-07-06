@@ -8,15 +8,18 @@ import { BooksFacade } from './store';
 import { AppRoutingModule } from './app-routing.module';
 import { AddbookComponent } from './pages/addbook/addbook.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { BookListComponent } from './pages/books/book-list/book-list.component';
 
 
 @NgModule({
-  declarations: [AppComponent, BooksComponent, AddbookComponent],
+  declarations: [AppComponent, BooksComponent, AddbookComponent, BookListComponent],
   imports: [
     BrowserModule,
     StoreModule.forRoot(rootReducer),
     AppRoutingModule,
     ReactiveFormsModule,
+    CommonModule
   ],
 
   providers: [BooksFacade],

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BooksFacade } from 'src/app/store/books/books.facade';
+import {Router} from "@angular/router"
 
 @Component({
   selector: 'app-book-list',
@@ -7,11 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookListComponent implements OnInit {
 
+  books$ = this.facade.books$
 
 
-  constructor() { }
+  constructor(  private  facade: BooksFacade, private router: Router) { }
+
+ 
 
   ngOnInit(): void {
+  }
+
+  toForm(){
+    this.router.navigate(['/addbook'])
   }
 
 }

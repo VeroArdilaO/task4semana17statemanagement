@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { updateBook } from './books.actions';
-import { getName } from './books.selectors';
+/* import { getName } from './books.selectors'; */
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserFacade {
     
-  public readonly name$ = this._store.select(getName);
+/*   public readonly name$ = this._store.select(getName); */
 
   constructor(private readonly _store: Store) {}
 
