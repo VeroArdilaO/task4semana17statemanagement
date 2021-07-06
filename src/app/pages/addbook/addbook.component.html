@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/c151b27f34.js" crossorigin="anonymous"></script>
+        
+        
+        <title>Master</title>
+
+    <style>
+    .icon::after{
+    content: '';
+    display: block;
+    position: absolute;
+    border-top: 23px solid transparent;
+    border-bottom: 17px solid transparent;
+    border-left: 12px solid #3182ce;
+    left: 100%;
+    top: 0;
+    }
+    </style>
+    
+    </head>
+
+    <body>
+        <h1 class="text-4xl text-gray-900 font-semibold text-center p-5"> FORM </h1>
+        <main class="flex justify-center">
+              <form [formGroup] = "form" class="form bg-white p-6 my-10 relative md:w-1/3 flex flex-col gap-5" (ngSubmit)="send()">
+                  
+                  <h3 class="text-3xl text-gray-900 font-semibold">Add Book</h3>
+                  <div class="flex space-x-5 mt-3">
+                      <input 
+                      class="form-control"
+                      type="text" 
+                      name="Id" 
+                      id="" 
+                      placeholder="Id" 
+                      class="text-xl border p-2  w-14" 
+                      formControlName="Id">
+
+                    <!--   <p>
+                        <small class="validar"  *ngIf="control.hasError('required') && control.dirty"> Este campo es requerido </small>
+                      </p> -->
+
+
+                      <input 
+                      type="tel" 
+                      name="Title" 
+                      id="" 
+                      placeholder="Title" 
+                      class=" text-xl border p-2 w-11/12" 
+                      formControlName="Title" >
+
+                    </div>
+                    <textarea 
+                    name="Description" 
+                    id="" 
+                    cols="10" 
+                    rows="3" 
+                    placeholder="Description" 
+                    class=" text-xl border p-2 mt-3 w-full" 
+                    formControlName="Description">
+                    </textarea>
+                   <div class="flex space-x-5 mt-3">
+                      <input 
+                      type="text" 
+                      name="pagesNumber" 
+                      id="" 
+                      placeholder="# pages" 
+                      class=" text-xl border p-2  w-1/2" 
+                      formControlName="pagesNumber">
+
+                      <input 
+                      class="form-control"
+                      type="tel" 
+                      name="Year" 
+                      id="" 
+                      placeholder="Year" 
+                      class=" text-xl border p-2 w-1/2" 
+                      formControlName="Year">
+                    </div>
+                  <input [disabled]="form.invalid"  type="submit" value="Create"  class=" text-2xl w-full mt-6 bg-blue-600 hover:bg-blue-500 text-white font-semibold p-3">
+              </form>
+        </main>
+    </body>
+</html>
+
