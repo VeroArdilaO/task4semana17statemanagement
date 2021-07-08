@@ -7,15 +7,11 @@ import { AddbookComponent } from './pages/addbook/addbook.component';
 
 const routes: Routes = [
 
-  { 
-    path: 'books', component: BookListComponent 
+  { path: '', redirectTo: 'addbook', pathMatch: 'full'},
 
-  },
+  { path: 'books', component: BookListComponent },
 
-  { 
-    path: 'addbook', component: AddbookComponent
-
-  }
+  { path: 'addbook', component: AddbookComponent }
 
 ];
 

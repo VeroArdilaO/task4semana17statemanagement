@@ -17,3 +17,12 @@ y le agregaremos estilos, además de navegabilidad mediate el Router de Angular
 http://localhost:4200/books
 
 <img src="./src/assets/maquetacionbookproject.png" alt="pantallazo-bookManager">
+
+### task 2 Book Manager: Agregar nuevo libro
+
+En este reto se creo el Reactive Form con los estilos de Tailwind, y por medio de state management, se conecto con la ruta
+
+del book manager para que al momento de agregar el libro este se cree en y se dirija al book manager con los cambios actualizados.
+
+
+<img src="./src/assets/formProject.PNG" alt="pantallazo-formvalid-and-invalid">

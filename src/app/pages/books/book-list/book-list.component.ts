@@ -17,10 +17,16 @@ export class BookListComponent implements OnInit {
  
 
   ngOnInit(): void {
+    
+    
+
+
   }
 
-  toForm(){
+  ReturntoForm(){
     this.router.navigate(['/addbook'])
   }
+
+  
 
 }

@@ -15,5 +15,6 @@ export class BooksFacade {
 
    public createBook(book: IBook): void {
     this._store.dispatch(addBook({ newBook: book }));
+
   }
 }

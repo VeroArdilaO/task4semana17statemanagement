@@ -21,24 +21,20 @@ export class AddbookComponent implements OnInit {
     Year: new FormControl ("" , Validators.required),
   });
 
+
   constructor( private  facade: BooksFacade, private router: Router) { }
 
   
 
   ngOnInit(): void {
-   /*  this.facade.createBook ({
-      id: '2',
-      title: 'Pride and Prejuice',
-      description: 'abcd',
-      pageCount: 230,
-      publishDate: 1890,
-    }) */
+    
+  
   }
 
   send(){
 
     if(this.form.invalid){
-      debugger;
+
       const formControl = this.form.get('id') as FormControl;
       formControl.markAsTouched();
       formControl.markAsDirty();
@@ -75,20 +71,19 @@ export class AddbookComponent implements OnInit {
       alert('succesfully Add Book')
 
       this.router.navigate(['/books'])
+
+  
+    /*   localStorage.setItem("DataBook", JSON.stringify('this.form'));
+
+      this.form = localStorage.getItem("DataBook");
+
+      console.log(this.form)
+ */
+
+
+  
     }
     
-   
-
-   /*  this.form = new FormGroup({
-      Id: new FormControl ("" , [Validators.required, Validators.maxLength(4)]),
-      Title: new FormControl ("" , Validators.required),
-      Description: new FormControl ("" , Validators.required),
-      pagesNumber: new FormControl ("" , Validators.required),
-      Year: new FormControl ("" , Validators.required),
-    });
- */
-   
-
   }
 
 
@@ -121,6 +116,7 @@ export class AddbookComponent implements OnInit {
     const formControl = this.form.get('Id') as FormControl;
     this.form.reset();
   }
+
 
 }
 
