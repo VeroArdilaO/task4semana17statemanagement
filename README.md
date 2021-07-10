@@ -31,7 +31,7 @@ del book manager para que al momento de agregar el libro este se cree en y se di
 
 
 
-En este reto, realizaremos conexion de nuestra aplicacion con una API externo, aplicando lo visto sobre HttpModule. Temas que repasaremos aca: HttpModule, Angular
+En este reto, realizamos la  conexion de nuestra aplicacion con una API externo, aplicando lo visto sobre HttpModule. Temas que repasaremos aca: HttpModule, Angular
 
 Services, Lifecycle methods, Async/Await methods, se incluyo el tema  LocalStorage a la aplicación y eliminación de libros.
 
