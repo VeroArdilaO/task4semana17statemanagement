@@ -91,16 +91,6 @@ export class AddbookComponent implements OnInit {
       alert('succesfully Add Book')
 
       this.router.navigate(['/books'])
-
-  
-    /*   localStorage.setItem("DataBook", JSON.stringify('this.form'));
-
-      this.form = localStorage.getItem("DataBook");
-
-      console.log(this.form)   */  
- 
-
-
   
     }
     
