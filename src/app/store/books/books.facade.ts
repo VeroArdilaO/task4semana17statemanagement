@@ -1,7 +1,7 @@
 import { Injectable, Output } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { IAppState, IBook } from '../../core/interfaces';
-import { addBook } from './books.actions';
+import { addBook, resetBooks } from './books.actions';
 import { booksSelector } from './books.selectors';
 
 @Injectable({
@@ -16,5 +16,9 @@ export class BooksFacade {
    public createBook(book: IBook): void {
     this._store.dispatch(addBook({ newBook: book }));
 
+  }
+
+  public resetBooks() {
+    this._store.dispatch(resetBooks({ books: [] }));
   }
 }

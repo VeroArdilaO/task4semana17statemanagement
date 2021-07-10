@@ -10,6 +10,7 @@ import { AddbookComponent } from './pages/addbook/addbook.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { BookListComponent } from './pages/books/book-list/book-list.component';
+import { HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { BookListComponent } from './pages/books/book-list/book-list.component';
     StoreModule.forRoot(rootReducer),
     AppRoutingModule,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
+    HttpClientModule,
   ],
 
   providers: [BooksFacade],

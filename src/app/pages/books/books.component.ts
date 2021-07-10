@@ -13,12 +13,6 @@ export class BooksComponent implements OnInit {
   constructor(private readonly _booksFacade: BooksFacade) {}
 
   ngOnInit(): void {
-    /* this._booksFacade.createBook({
-      id: '2',
-      title: 'Pride and Prejuice',
-      description: 'abcd',
-      pageCount: 230,
-      publishDate: 1890,
-    }); */
+  
   }
 }

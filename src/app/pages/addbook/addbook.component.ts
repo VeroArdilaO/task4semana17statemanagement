@@ -1,8 +1,8 @@
 import { Component, OnInit, isDevMode } from '@angular/core';
-import { resetFakeAsyncZone } from '@angular/core/testing';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { BooksFacade } from 'src/app/store/books/books.facade';
 import {Router} from "@angular/router"
+import { CacheService } from 'src/app/cache.service';
 
 @Component({
   selector: 'app-addbook',
@@ -14,7 +14,7 @@ export class AddbookComponent implements OnInit {
   isDevMode = isDevMode();
 
   form = new FormGroup({
-    id: new FormControl ("" , [Validators.required, Validators.maxLength(3)]),
+    id: new FormControl (null , [Validators.required, Validators.maxLength(3)]),
     title: new FormControl ("" , Validators.required),
     description: new FormControl ("" , Validators.required),
     pagesNumber: new FormControl ("" , Validators.required),
@@ -22,7 +22,7 @@ export class AddbookComponent implements OnInit {
   });
 
 
-  constructor( private  facade: BooksFacade, private router: Router) { }
+  constructor( private  facade: BooksFacade, private router: Router, private cache: CacheService) { }
 
   
 
@@ -61,12 +61,32 @@ export class AddbookComponent implements OnInit {
       this.form.updateValueAndValidity();
      
     } else {
+      /* debugger; */
 
       console.log(JSON.stringify(this.form.value))
 
-      this.facade.createBook ({
-         ...this.form.value
-      }) 
+      const newBook = { ...this.form.value}
+
+      const cacheBooks = this.cache.getCache('book');
+      debugger;
+      const duplicatedBookId = cacheBooks.filter((book: any) => book.id === newBook.id )
+
+      if(duplicatedBookId.length !== 0 ){
+
+        alert('Book Id repeat');
+
+        return;
+
+      }
+
+      cacheBooks.push(newBook);
+
+      this.cache.removeCache('book');
+
+      this.cache.saveCache('book', cacheBooks);
+
+      this.facade.createBook(newBook)
+
 
       alert('succesfully Add Book')
 
@@ -77,8 +97,8 @@ export class AddbookComponent implements OnInit {
 
       this.form = localStorage.getItem("DataBook");
 
-      console.log(this.form)
- */
+      console.log(this.form)   */  
+ 
 
 
   

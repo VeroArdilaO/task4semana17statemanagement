@@ -26,3 +26,17 @@ del book manager para que al momento de agregar el libro este se cree en y se di
 
 
 <img src="./src/assets/formProject.PNG" alt="pantallazo-formvalid-and-invalid">
+
+### task 3  Book Manager:  Consulta desde API
+
+
+
+En este reto, realizaremos conexion de nuestra aplicacion con una API externo, aplicando lo visto sobre HttpModule. Temas que repasaremos aca: HttpModule, Angular
+
+Services, Lifecycle methods, Async/Await methods, se incluyo el tema  LocalStorage a la aplicación y eliminación de libros.
+
+<img src="./src/assets/BookApi.png" alt="pantallazo-BookList">
+
+
+
+
