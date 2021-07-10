@@ -4,24 +4,18 @@ import { RouterModule, Routes } from '@angular/router';
 import { BookListComponent } from './pages/books/book-list/book-list.component';
 import { AddbookComponent } from './pages/addbook/addbook.component';
 
-
 const routes: Routes = [
-
-  { path: '', redirectTo: 'addbook', pathMatch: 'full'},
+  { path: '', redirectTo: 'addbook', pathMatch: 'full' },
 
   { path: 'books', component: BookListComponent },
 
-  { path: 'addbook', component: AddbookComponent }
-
+  { path: 'addbook/:id', component: AddbookComponent },
 ];
 
 @NgModule({
-  declarations: [ ],
-  imports: [
-    CommonModule,
-    RouterModule.forRoot(routes)
-  ],
+  declarations: [],
+  imports: [CommonModule, RouterModule.forRoot(routes)],
 
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
