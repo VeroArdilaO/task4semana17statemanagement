@@ -11,10 +11,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { BookListComponent } from './pages/books/book-list/book-list.component';
 import { HttpClientModule} from '@angular/common/http';
+import { AddSessionComponent } from './pages/add-session/add-session.component';
 
 
 @NgModule({
-  declarations: [AppComponent, BooksComponent, AddbookComponent, BookListComponent],
+  declarations: [AppComponent, BooksComponent, AddbookComponent, BookListComponent, AddSessionComponent],
   imports: [
     BrowserModule,
     StoreModule.forRoot(rootReducer),

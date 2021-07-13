@@ -5,7 +5,7 @@
 </div>
 
 
-<div class="flex flex-wrap justify-center gap-5 ">
+<div class="grid grid-cols-4 place-items-center">
 
     <div class="max-w-md py-4 px-8 bg-white shadow-lg rounded-lg my-20" *ngFor=" let book of books$ | async ">
       <div>
@@ -13,7 +13,9 @@
         <p class="mt-2 text-gray-600">{{book.description}}</p>
       </div>
       <div class="flex justify-end mt-4">
-        <a href="#" class="text-xl font-medium text-indigo-500">Schedule Club Session - #Id: {{book.id}} </a>
+
+        <a (click) = "callSession(book.id)"  class="text-xl font-medium text-indigo-500 cursor-pointer">Schedule Club Session - #Id: {{book.id}} </a>
+
       </div>
 
       <div class="flex justify-center">

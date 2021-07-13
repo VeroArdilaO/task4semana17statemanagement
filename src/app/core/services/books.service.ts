@@ -5,31 +5,21 @@ import { Observable } from 'rxjs';
 import { IBook } from '../interfaces';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BooksService {
+  private apiBooks = 'https://fakerestapi.azurewebsites.net/api/v1/Books';
 
-  private apiBooks = "https://fakerestapi.azurewebsites.net/api/v1/Books"
+  constructor(private http: HttpClient, private facade: BooksFacade) {}
 
+  public async bookService() {
+    
+    const books = await this.http.get<IBook[]>(this.apiBooks).toPromise();
 
+    const sliceBooks = books.slice(0, 5);
 
-  constructor(private http: HttpClient, private  facade: BooksFacade ) {
-   }
-
-
- public async bookService() {
-
-    const books:any = await  this.http.get(this.apiBooks).toPromise();
-
-    const sliceBooks = books.slice(0,5)
-
-   return sliceBooks;
-  
+    return sliceBooks;
   }
-
 }
-
-
-
 
 /* sliceBooks.forEach((book: IBook) => this.facade.createBook(book)) */

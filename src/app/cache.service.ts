@@ -9,7 +9,7 @@ export class CacheService {
   constructor() { }
 
 
-  saveCache(key: string, value: IBooksStore) {
+  saveCache(key: string, value: IBooksStore | any) {
 
     localStorage.setItem(key, JSON.stringify(value));
   }
