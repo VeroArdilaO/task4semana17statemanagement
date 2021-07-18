@@ -18,7 +18,7 @@ export class BookListComponent implements OnInit {
 
   books$ = this.facade.books$
 
-  form = new FormGroup({
+   form = new FormGroup({
     id: new FormControl(null, [Validators.required, Validators.maxLength(3)]),
     title: new FormControl('', Validators.required),
     description: new FormControl('', Validators.required),
@@ -29,6 +29,7 @@ export class BookListComponent implements OnInit {
   session: ISession = {
 
     id: "" , 
+    title:'',
     book:   {
       id: "",
       title: "",
@@ -80,17 +81,10 @@ export class BookListComponent implements OnInit {
 
   callSession(idBook: string ) {
 
-      const sessions:Array<ISession> = this.cache.getCache('sessions')
-
-      sessions.push(this.session);
-
-      this.cache.saveCache('session', sessions)
-
-      console.log(this.facadeSession.addSessions(this.session))
-
+    
       console.log(idBook);
 
-      this.router.navigate(['/addsession'], { queryParams: { bookId: idBook }})
+      this.router.navigate(['/addsession'], { queryParams: { bookId: idBook }}) 
 
   }
 }

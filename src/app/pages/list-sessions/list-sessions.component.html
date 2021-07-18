@@ -1,0 +1,15 @@
+<h1 class="text-gray-800 text-3xl font-semibold text-center p-5"> SCHEDULED READING SESSION </h1>
+
+<div class="grid grid-cols-4 place-items-center">
+
+  <div class="max-w-md py-4 px-8 bg-white   border-2 border-blue-600  border-opacity-75 shadow-lg rounded-lg my-20" *ngFor=" let session of sessions$ | async ">
+    <div class=" flex flex-col gap-10">
+      <h1 class="text-gray-800 text-3xl font-semibold bg-blue-600 bg-opacity-25 p-10 text-center"> ACTIVE SESSION </h1>
+      <h2 class="text-gray-800 text-3xl font-semibold"> # ID =  {{session.id}}</h2>
+      <h2 class="mt-2 text-3xl font-semibold text-gray-600"> Title  = {{session.title}}</h2>
+      <h2 class="mt-2 text-3xl font-semibold text-gray-600"> Date =  {{session.date}}</h2>
+    </div>
+  </div>
+</div>
+
+

@@ -4,7 +4,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { CacheService } from 'src/app/cache.service';
 import { ISession } from 'src/app/core/interfaces/bookSession';
 import { SessionFacade } from 'src/app/store/sessions';
-
+import { IBook, ISessionStore} from 'src/app/core/interfaces';
 
 @Component({
   selector: 'app-add-session',
@@ -13,11 +13,12 @@ import { SessionFacade } from 'src/app/store/sessions';
 })
 export class AddSessionComponent implements OnInit {
 
-
-
+  
   book:any = null;
 
   date = new FormControl(null, Validators.required);
+
+
 
   constructor(  private route: ActivatedRoute, private cache: CacheService,  private router: Router, private facadeSession: SessionFacade ) { }
 
@@ -49,11 +50,12 @@ export class AddSessionComponent implements OnInit {
       return
     } 
 
+
     const session = {
 
       ...this.book, date: this.date.value, id: this.book.id
     }
-
+  
     const sessions:Array<ISession> = this.cache.getCache('sessions')
 
     sessions.push(session);
@@ -64,9 +66,9 @@ export class AddSessionComponent implements OnInit {
 
     alert('Succesfully Session created ');
 
-    this.router.navigate(['/books'])
-  }
-
+    this.router.navigate(['/listsessions'])
+  } 
+ 
 }
 
 

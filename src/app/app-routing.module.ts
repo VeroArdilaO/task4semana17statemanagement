@@ -4,8 +4,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { BookListComponent } from './pages/books/book-list/book-list.component';
 import { AddbookComponent } from './pages/addbook/addbook.component';
 import { AddSessionComponent } from './pages/add-session/add-session.component';
+import { ListSessionsComponent } from './pages/list-sessions/list-sessions.component';
 
 const routes: Routes = [
+
   { path: '', redirectTo: 'addbook', pathMatch: 'full' },
 
   { path: 'books', component: BookListComponent },
@@ -13,6 +15,8 @@ const routes: Routes = [
   { path: 'addbook', component: AddbookComponent },
 
   { path: 'addsession', component: AddSessionComponent },
+
+  { path: 'listsessions', component: ListSessionsComponent },
 
 /*   { path: 'addbook/:id', component: AddbookComponent }, */
 ];

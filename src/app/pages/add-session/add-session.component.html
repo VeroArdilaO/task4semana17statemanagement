@@ -1,35 +1,36 @@
 <h1 class="text-4xl text-gray-900 font-semibold text-center p-5"> READING CLUB SESSION PROGRAM </h1>
 
 <div class="flex justify-center">
-    <table class="min-w-12 table-auto mt-24">
-      <thead class="justify-between ">
-        <tr class="bg-gray-800 ">
-          <th class="px-16 py-2 ">
-            <span class="text-gray-300 text-3xl p-5">Id</span>
-          </th>
-          <th class="px-16 py-2">
-            <span class="text-gray-300 text-3xl">Title</span>
-          </th>
-          <th class="px-16 py-2">
-            <span class="text-gray-300 text-3xl">Date</span>
-          </th>
-        </tr>
-      </thead>
-      <tbody class="bg-gray-200">
-        <tr class="bg-white border-4 border-gray-200">
-          <td class="px-16 py-2" >
-            <span class="text-center ml-2 font-semibold text-3xl">{{book.id}}</span>
-          </td>
-          <td class="px-16 py-2">
-            <span class="text-center ml-2 font-semibold text-3xl">{{book.title}}</span>
-          </td>
-          <td class="px-16 py-2 text-3xl">
-            <input [formControl]="date" class="text-center ml-2 font-semibold text-3xl" type="date">
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="flex justify-center mt-10">
-    <input  (click) ="createSession()" type="submit" value="Create Session"  class=" text-2xl w-60 mt-6 bg-blue-600 hover:bg-blue-500 text-white font-semibold p-3 ">
- </div>
+  <table class="min-w-12 table-auto mt-24">
+    <thead class="justify-between ">
+      <tr class="bg-gray-800 ">
+        <th class="px-16 py-2 ">
+          <span class="text-gray-300 text-3xl p-5">Id</span>
+        </th>
+        <th class="px-16 py-2">
+          <span class="text-gray-300 text-3xl">Title</span>
+        </th>
+        <th class="px-16 py-2">
+          <span class="text-gray-300 text-3xl">Date</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody class="bg-gray-200">
+      <tr class="bg-white border-4 border-gray-200">
+        <td class="px-16 py-2">
+          <span class="text-center ml-2 font-semibold text-3xl">{{book.id}}</span>
+        </td>
+        <td class="px-16 py-2">
+          <span class="text-center ml-2 font-semibold text-3xl">{{book.title}}</span>
+        </td>
+        <td class="px-16 py-2 text-3xl">
+          <input [formControl]="date" class="text-center ml-2 font-semibold text-3xl" type="date">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="flex justify-center mt-10">
+  <button (click)="createSession()" type="submit" value="Create Session"
+    class=" text-2xl w-60 h-20 mt-6 bg-blue-600 hover:bg-blue-500 text-white font-semibold p-3 ">Create Session</button>
+</div>

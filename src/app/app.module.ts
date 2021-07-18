@@ -12,10 +12,11 @@ import { CommonModule } from '@angular/common';
 import { BookListComponent } from './pages/books/book-list/book-list.component';
 import { HttpClientModule} from '@angular/common/http';
 import { AddSessionComponent } from './pages/add-session/add-session.component';
+import { ListSessionsComponent } from './pages/list-sessions/list-sessions.component';
 
 
 @NgModule({
-  declarations: [AppComponent, BooksComponent, AddbookComponent, BookListComponent, AddSessionComponent],
+  declarations: [AppComponent, BooksComponent, AddbookComponent, BookListComponent, AddSessionComponent, ListSessionsComponent],
   imports: [
     BrowserModule,
     StoreModule.forRoot(rootReducer),

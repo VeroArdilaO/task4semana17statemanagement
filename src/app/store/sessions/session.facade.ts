@@ -10,13 +10,17 @@ import { ISession } from 'src/app/core/interfaces/bookSession';
 })
 export class SessionFacade {
 
-  public readonly books$ = this._store.select(sessionSelector);
+  public readonly sessions$ = this._store.select(sessionSelector);
+  session$: any;
 
   constructor(private readonly _store: Store<IAppState>) {}
 
    public addSessions(book: ISession): void {
+
     this._store.dispatch(addSession({ newSession: book }));
 
   }
 
 }
+
+
