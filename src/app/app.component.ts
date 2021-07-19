@@ -4,6 +4,8 @@ import {Router} from "@angular/router"
 import { BooksService } from 'src/app/core/services/books.service';
 import { CacheService } from './cache.service';
 import { IBook } from './core/interfaces/book';
+import { SessionFacade } from './store/sessions/session.facade';
+import { ISession } from './core/interfaces/bookSession';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +16,7 @@ export class AppComponent implements OnInit {
   title = 'proyectoNgRx';
 
 
-constructor(  private  facade: BooksFacade, private router: Router, private service: BooksService, private cache: CacheService) { }
+constructor(  private  facade: BooksFacade, private router: Router, private service: BooksService, private cache: CacheService, private facadeSession: SessionFacade ) { }
 
  
 
@@ -31,7 +33,6 @@ constructor(  private  facade: BooksFacade, private router: Router, private serv
 
     cachebooks.forEach((book: IBook) => this.facade.createBook(book)) 
 
-  
+    }
+    
   }
-
-}

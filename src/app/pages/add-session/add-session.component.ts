@@ -62,24 +62,15 @@ export class AddSessionComponent implements OnInit {
 
     this.cache.saveCache('session', sessions)
 
+
     console.log(this.facadeSession.addSessions(session))
+
 
     alert('Succesfully Session created ');
 
     this.router.navigate(['/listsessions'])
+
+    
   } 
  
 }
-
-
-/* cacheBooks.push(newBook);
-
-this.cache.removeCache('book');
-
-this.cache.saveCache('book', cacheBooks);
-
-this.facade.createBook(newBook);
-
-alert('succesfully Add Book');
-
-this.router.navigate(['/books']) */

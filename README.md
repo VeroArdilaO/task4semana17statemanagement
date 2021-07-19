@@ -37,6 +37,24 @@ Services, Lifecycle methods, Async/Await methods, se incluyo el tema  LocalStora
 
 <img src="./src/assets/BookApi.png" alt="pantallazo-BookList">
 
+### task 4  Book Manager:   programar una nueva sesion de club de lectura 
+
+En este reto al darle Click a Scheduled Club Session, se dirige a otra página para programar la sessión con el ID, Titulo del libro y Fecha para la sesión.
+
+<img src="./src/assets/peligro2.png" alt="pantallazo-selectBookSchedule">
+
+<img src="./src/assets/organizarsesion.png" alt="pantallazo-schedulesession">
+
+### task 5  Book Manager:  Ver la lista de sesiones progamadas
+
+En este reto se pueden observar la sesiones de Lectura programadas para su respectivo libro y fecha de reunión.
+
+<img src="./src/assets/ListadoSessions.png" alt="pantallazo-listSessions">
+
+
+
+
+
 
 
 

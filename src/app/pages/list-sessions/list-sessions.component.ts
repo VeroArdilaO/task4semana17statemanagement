@@ -13,7 +13,6 @@ import { SessionFacade } from 'src/app/store/sessions';
 export class ListSessionsComponent implements OnInit {
 
 
-
   books$ = this.facade.books$
 
   sessions$ = this.facadeSession.sessions$
@@ -22,7 +21,12 @@ export class ListSessionsComponent implements OnInit {
 
   ngOnInit(): void {
 
+    
   }
 
+  ReturnBooks(){
+
+    this.router.navigate(['/books'])
+  }
 }
 
